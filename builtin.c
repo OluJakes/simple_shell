@@ -35,8 +35,7 @@ int _mycd(info_t *inf)
 	{
 		dir = _getenv(inf, "HOME=");
 		if (!dir)
-			chgdir_ret = /* TODO: what should this be? */
-				chdir((dir = _getenv(inf, "PWD=")) ? dir : "/");
+			chgdir_ret = chdir((dir = _getenv(inf, "PWD=")) ? dir : "/");
 		else
 			chgdir_ret = chdir(dir);
 	}
@@ -49,8 +48,7 @@ int _mycd(info_t *inf)
 			return (1);
 		}
 		_puts(_getenv(inf, "OLDPWD=")), _putchar('\n');
-		chgdir_ret = /* TODO: what should this be? */
-			chdir((dir = _getenv(inf, "OLDPWD=")) ? dir : "/");
+		chgdir_ret = chdir((dir = _getenv(inf, "OLDPWD=")) ? dir : "/");
 	}
 	else
 		chgdir_ret = chdir(inf->argv[1]);
