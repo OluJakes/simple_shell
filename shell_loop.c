@@ -89,7 +89,7 @@ int find_builtin_cmd(info_t *inf)
 void find_cmd(info_t *inf)
 {
 	char *path = NULL;
-	int a,b;
+	int a, b;
 
 	inf->path = inf->argv[0];
 	if (inf->linecount_flag == 1)
@@ -98,10 +98,10 @@ void find_cmd(info_t *inf)
 		inf->linecount_flag = 0;
 	}
 	for (a = 0, b = 0; inf->arg[a]; a++)
-if (!del_chk(inf->arg[a], " \t\n"))
-b++;
- if (!b)
-   return;
+		if (!del_chk(inf->arg[a], " \t\n"))
+			b++;
+	if (!b)
+		return;
 
 	path = find_comm_path(inf, _getenv(inf, "PATH="), inf->argv[0]);
 	if (path)
@@ -112,7 +112,7 @@ b++;
 	else
 	{
 		if ((interactive_chk(inf) || _getenv(inf, "PATH=") ||
-			inf->argv[0][0] == '/') && is_exec(inf, inf->argv[0]))
+					inf->argv[0][0] == '/') && is_exec(inf, inf->argv[0]))
 			fork_cmd(inf);
 		else if (*(inf->arg) != '\n')
 		{

@@ -36,7 +36,7 @@ int _atoi(char *str)
 
 /**
  * _isalpha - Check if a character is alphabetic.
- * @c: The character to check.
+ * @ch: The character to check.
  *
  * Return: 1 if `c` is alphabetic, 0 otherwise.
  */
@@ -50,7 +50,7 @@ int _isalpha(int ch)
 
 /**
  * interactive_chk - Check if the shell is running in interactive mode.
- * @info: Pointer to a structure containing information.
+ * @inf: Pointer to a structure containing information.
  *
  * Return: 1 if the shell is in interactive mode, 0 otherwise.
  */
@@ -61,8 +61,8 @@ int interactive_chk(info_t *inf)
 
 /**
  * del_chk - Check whether a character is a delimiter.
- * @c: The character to check.
- * @delim: The delimiter string to compare with.
+ * @ch: The character to check.
+ * @del: The delimiter string to compare with.
  *
  * Return: 1 if `c` is a delimiter, 0 if not.
  */

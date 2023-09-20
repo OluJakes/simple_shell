@@ -85,16 +85,16 @@ size_t print_list(const list_t *fnode)
  *
  * Return: Matched node or NULL.
  */
-list_t *node_starts_with(list_t *node, char *pfix, char ch)
+list_t *node_starts_with(list_t *lhead, char *pfix, char ch)
 {
 	char *v = NULL;
 
-	while (node)
+	while (lhead)
 	{
-		v = starts(node->str, pfix);
+		v = starts(lhead->str, pfix);
 		if (v && ((ch == -1) || (*v == ch)))
-			return (node);
-		node = node->next;
+			return (lhead);
+		lhead = lhead->next;
 	}
 	return (NULL);
 }
